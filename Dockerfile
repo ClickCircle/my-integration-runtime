@@ -11,5 +11,5 @@ COPY run.sh /run.sh
  
 COPY build/libs/deps /lib
 COPY build/classes/java/main /classes
-COPY build/libs/my-integration-runtime-0.0.1-SNAPSHOT.jar main.jar
-CMD java -jar /main.jar
+COPY app.jar app.jar
+CMD java -jar /app.jar
