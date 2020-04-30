@@ -11,4 +11,4 @@ COPY run.sh /run.sh
  
 COPY build/libs/deps /lib
 COPY build/classes/java/main /classes
-CMD java -cp ./ com.jm.integration.runtime.CamelIntegrationRuntimeApplication
+CMD java -cp "classes" com.jm.integration.runtime.CamelIntegrationRuntimeApplication
