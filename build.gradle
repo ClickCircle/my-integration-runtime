@@ -1,6 +1,5 @@
 plugins {
     id 'org.springframework.boot' version '2.0.3.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     id 'java'
 }
 
@@ -9,8 +8,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 ext {
-    camelVersion = '3.2.0'
-    springCloudVersion = 'Hoxton.SR3'
+    camelVersion = '2.24.0'
 }
 
 repositories {
@@ -20,57 +18,10 @@ repositories {
     maven { url "https://repo.spring.io/milestone" }
 }
 
-dependencyManagement {
-    imports {
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-    }
-    imports {
-        mavenBom "org.apache.camel.springboot:camel-spring-boot-dependencies:${camelVersion}"
-    }
-}
 
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation "org.apache.camel.springboot:camel-spring-boot-starter"
-    implementation "org.apache.camel.springboot:camel-zipkin-starter"
-
-    implementation "org.apache.camel.springboot:camel-http-starter"
-    implementation "org.apache.camel.springboot:camel-netty-http-starter"
-    implementation "org.apache.camel.springboot:camel-netty-starter"
-//    implementation "org.apache.camel:camel-jetty:${camelVersion}"
-
-    implementation "org.apache.camel.springboot:camel-ribbon-starter"
-
-//    implementation "org.apache.camel:camel-amqp:${camelVersion}"
-//    implementation "org.apache.camel:camel-rabbitmq:${camelVersion}"
-//    implementation "org.apache.camel:camel-jms:${camelVersion}"
-//    implementation "org.apache.camel:camel-kafka:${camelVersion}"
-//    implementation "org.apache.camel:camel-ftp:${camelVersion}"
-//    implementation "org.apache.camel:camel-exec:${camelVersion}"
-
-    implementation "org.apache.camel.springboot:camel-jdbc-starter"
-//    implementation "org.apache.camel:camel-sql:${camelVersion}"
-//    implementation "org.apache.camel:camel-elasticsearch-rest:${camelVersion}"
-    implementation 'org.postgresql:postgresql:42.2.5+'
-
-//    implementation "org.apache.camel.springboot:camel-spring-redis-starter:${camelVersion}"
-
-//    implementation "org.apache.camel:camel-zookeeper:${camelVersion}"
-
-    implementation 'io.hawt:hawtio-springboot:2.9.1'
-
-    implementation 'com.alibaba:fastjson:1.2.68'
-    implementation 'com.google.code.gson:gson:2.8.6'
-
-    implementation 'com.ctrip.framework.apollo:apollo-client:1.1.0'
-
-    implementation "org.apache.camel.springboot:camel-service-starter"
-    implementation "org.apache.camel.springboot:camel-spring-cloud-starter"
-    implementation "org.apache.camel.springboot:camel-spring-cloud-netflix-starter"
-    implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
-
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compile "org.apache.camel:camel-spring-boot-starter:2.24.0"
 }
 
 task copyJars(type:Copy) {

@@ -9,5 +9,4 @@ public class CamelIntegrationRuntimeApplication {
     public static void main(String[] args) {
         SpringApplication.run(CamelIntegrationRuntimeApplication.class, args);
     }
-
 }
