@@ -11,4 +11,3 @@ RUN chmod +x /run.sh
  
 COPY build/libs/deps /lib
 COPY build/classes/java/main /classes
-COPY build/resources/main/* /classes/
