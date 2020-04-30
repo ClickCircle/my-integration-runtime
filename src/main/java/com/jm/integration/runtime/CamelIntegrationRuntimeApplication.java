@@ -6,7 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CamelIntegrationRuntimeApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         SpringApplication.run(CamelIntegrationRuntimeApplication.class, args);
+        Thread.sleep(Long.MAX_VALUE);
     }
 }
